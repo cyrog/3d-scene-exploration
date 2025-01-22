@@ -1,58 +1,26 @@
-# create-svelte
+# three.js 3D scene exploration
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This project demonstrates the creation of a dynamic 3D scene with interactive sky settings and animated objects using Three.js and Threlte. The animation is controlled by key events (specifically the "Up Arrow" key), allowing for smooth transitions and visual effects based on the user's input.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+## Features
+- **3D Scene**: A rotating group of spheres with smooth animation.
+- **Sky Simulation**: Dynamic sky transition between sunset and night based on key inputs.
+- **Interactive Controls**: The scene responds to the "Up Arrow" key, updating the sky's appearance and rotating objects.
+- **Smooth Animation**: Time-based animations are used for smooth transitions and effects.
 
-## Creating a project
+## Demo
 
-If you're seeing this, you've probably already done this step. Congrats!
+![Demo GIF](scroll.gif)
 
-```bash
-# create a new project in the current directory
-npx sv create
+*(Update the `path_to_your_gif.gif` link with the location of your `.gif` file to showcase the visuals.)*
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Technologies Used
 
-## Developing
+    Three.js: JavaScript 3D library for rendering the 3D scene and animations.
+    Threlte: A Svelte wrapper for Three.js, providing an easier integration with Svelte.
+    Svelte: A modern JavaScript framework for building user interfaces.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+ ## Acknowledgments
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
-
-```bash
-npm run package
-```
-
-To create a production version of your showcase app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
+    Three.js for providing a powerful 3D graphics library.
+    Threlte for simplifying Three.js integration with Svelte.

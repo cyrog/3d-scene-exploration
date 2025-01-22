@@ -10,7 +10,7 @@
     let maxScroll = 30.575;
     let minScroll = scrollY;
 
-    let dirVel = 0.001;
+    let dirVel = 0.00015;
 
     const handleScroll = (event: WheelEvent) => {
       scrollY += event.deltaY * dirVel;
