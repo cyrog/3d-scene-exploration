@@ -20,5 +20,6 @@ This project demonstrates the creation of a dynamic 3D scene with interactive sk
 
  ## Acknowledgments
 
-    Three.js for providing a powerful 3D graphics library.
-    Threlte for simplifying Three.js integration with Svelte.
+    SuicideSquid for the fancy 3D model
+    Three.js for providing a powerful 3D graphics library
+    Threlte for simplifying Three.js integration with Svelte
