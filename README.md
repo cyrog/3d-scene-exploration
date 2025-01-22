@@ -1,6 +1,6 @@
 # three.js 3D scene exploration
 
-This project demonstrates the creation of a dynamic 3D scene with interactive sky settings and animated objects using Three.js and Threlte. The animation is controlled by key events (specifically the "Up Arrow" key), allowing for smooth transitions and visual effects based on the user's input.
+This project demonstrates the creation of a dynamic 3D scene with interactive sky settings and animated objects using Three.js and Threlte. The animation is controlled by the wheel event.
 
 ## Features
 - **3D Scene**: A rotating group of spheres with smooth animation.
