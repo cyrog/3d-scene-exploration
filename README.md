@@ -3,10 +3,9 @@
 This project demonstrates the creation of a dynamic 3D scene with interactive sky settings and animated objects using Three.js and Threlte. The animation is controlled by the wheel event.
 
 ## Features
-- **3D Scene**: A rotating group of spheres with smooth animation.
-- **Sky Simulation**: Dynamic sky transition between sunset and night based on key inputs.
-- **Interactive Controls**: The scene responds to the "Up Arrow" key, updating the sky's appearance and rotating objects.
-- **Smooth Animation**: Time-based animations are used for smooth transitions and effects.
+- **3D Scene**: A 3d model and a rotating group of spheres with smooth animation.
+- **Sky Simulation**: Dynamic sky transition between sunset and night based on input.
+- **Interactive Controls**: The scene responds to the mouse wheel, updating the sky's appearance and rotating objects.
 
 ## Demo
 
