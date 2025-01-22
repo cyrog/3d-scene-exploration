@@ -17,6 +17,7 @@ This project demonstrates the creation of a dynamic 3D scene with interactive sk
     1. clone the repo, cd into it
     2. install dependencies with npm install
     3. run it with npm run dev
+    4. look at it in localhost:5173
     
 
 ## Technologies Used
