@@ -42,7 +42,8 @@
 		"svelte": "^5.0.0",
 		"tailwindcss": "^3.4.9",
 		"typescript": "^5.3.2",
-		"vite": "^5.4.11"
+		"vite": "^5.4.11",
+		"vitest": "^3.0.3"
 	},
 	"dependencies": {
 		"@dimforge/rapier3d-compat": "^0.14.0",

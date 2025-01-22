@@ -1,21 +1,27 @@
 <script lang="ts">
+    import * as THREE from 'three'
     import { T } from '@threlte/core';
-    import * as THREE from 'three';
-    import { Sky, Edges, Stars } from '@threlte/extras';
+    import { Sky } from '@threlte/extras';
     import ModelPath from './GLman.svelte';
-    //import { useFrame } from '@threlte/core';
-    import ParticleFloor from './ParticleFloor.svelte';
+    import SomeSphere from './Sphere.svelte';
+    import { Plane, PlaneGeometry } from 'three';
   
     let scrollY = 15;
     let maxScroll = 30.575;
     let minScroll = scrollY;
 
+    let dirVel = 0.001;
+
     const handleScroll = (event: WheelEvent) => {
-      scrollY += event.deltaY * 0.001;
-      if (scrollY < minScroll)
-        scrollY = minScroll;
-      if (scrollY > maxScroll)
-        scrollY = maxScroll;
+      scrollY += event.deltaY * dirVel;
+      if (scrollY <= minScroll) {
+        //scrollY = minScroll;
+        dirVel *= -1;
+      }
+      if (scrollY >= maxScroll) {
+        //scrollY = maxScroll;
+        dirVel *= -1;
+      }
       //console.log(scrollY);
     };
   
@@ -73,9 +79,9 @@
       fov={60}
       near={0.1}
       far={1000}
-      on:create={({ ref }) => ref.lookAt(10, 150, 0)}
     />
   </T.Group>
+
   
   <!-- T.DirectionalLight position={[5, 5, 5]} intensity={1} /> -->
   <!-- T.AmbientLight intensity={0.2} /> -->
@@ -91,6 +97,7 @@
   <!-- Sky with dynamic elevation based on scrollY -->
 
   <Sky 
+    scale={5}
     turbidity={getSkySettings().turbidity}
     rayleigh={getSkySettings().rayleigh}
     azimuth={getSkySettings().azimuth}
@@ -99,10 +106,10 @@
     mieDirectionalG={getSkySettings().mieDirectionalG}
     exposure={getSkySettings().exposure}
   />
-  <!-- <Stars/> -->
-  <T.GridHelper />
 
+  <!-- <Stars/> -->
   <T.Group position={[0, -0.07, 0]} scale={8}> 
     <ModelPath/>
+    <SomeSphere/>
   </T.Group>
 
