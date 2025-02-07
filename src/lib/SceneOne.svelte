@@ -10,22 +10,45 @@
     let maxScroll = 30.575;
     let minScroll = scrollY;
 
-    let dirVel = 0.00015;
+    let dirVel = 0.005;
+    let isMouseDown = false;
+    let lastMouseY = 0;
 
-    const handleScroll = (event: WheelEvent) => {
-      scrollY += event.deltaY * dirVel;
-      if (scrollY <= minScroll) {
-        //scrollY = minScroll;
-        dirVel *= -1;
+    const handleMouseDown = (event: MouseEvent) => {
+      if (event.button === 0) { // Left mouse button
+        isMouseDown = true;
+        lastMouseY = event.clientY; // Save the mouse's initial Y position
       }
-      if (scrollY >= maxScroll) {
-        //scrollY = maxScroll;
-        dirVel *= -1;
-      }
-      //console.log(scrollY);
     };
-  
-    window.addEventListener('wheel', handleScroll);
+
+    const handleMouseUp = () => {
+      isMouseDown = false;
+    };
+
+    const handleMouseMove = (event: MouseEvent) => {
+      if (isMouseDown) {
+        const deltaY = event.clientY - lastMouseY;
+        scrollY += deltaY * dirVel;
+        console.log("scrollY:", scrollY);
+
+        if (scrollY <= minScroll) {
+          scrollY = minScroll;
+        }
+        if (scrollY >= maxScroll) {
+          scrollY = maxScroll;
+        }
+
+        // Update lastMouseY to the current mouse Y position for the next move
+        lastMouseY = event.clientY;
+      }
+    };
+
+    // Add event listeners
+    window.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('mousemove', handleMouseMove);
+
+
 
     const night = {
     turbidity: 20,
