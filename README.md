@@ -13,8 +13,6 @@ This project demonstrates the creation of a dynamic 3D scene with interactive sk
 
 ![Demo GIF](gifs/scroll.gif)
 
-![Demo GIF](gifs/gif4)
-
 ## Technologies Used
 
     Three.js: JavaScript 3D library for rendering the 3D scene and animations.
