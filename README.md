@@ -9,7 +9,9 @@ This project demonstrates the creation of a dynamic 3D scene with interactive sk
 
 ## Demo
 
-![Demo GIF](scroll.gif)
+![Demo GIF](gifs/gif4.gif)
+
+![Demo GIF](gifs/scroll.gif)
 
 ## Technologies Used
 
