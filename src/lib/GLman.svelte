@@ -15,7 +15,7 @@
     geometry={gltf.nodes.GLman_level2.geometry}
     material={gltf.materials.GLman}
   >
-   <Edges thresholdAngle={0.5} color="white" />
+   <Edges thresholdAngle={1} color="grey" />
   </T.Mesh>
 {:catch err}
   {@render error?.({ error: err })}
