@@ -1,13 +1,19 @@
+import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vitest/config';
 
+// Export Vite configuration
 export default defineConfig({
-   plugins: [sveltekit()],
-   test: {
-      include: ['src/**/*.{test,spec}.{js,ts}']
-   },
-   ssr: {
-      noExternal: ['three'],
-      noExternal: ['postprocessing']
-   }
+  plugins: [sveltekit()],
+  resolve: {
+    alias: {
+      // Resolve path issues for Three.js and OrbitControls
+      'three/examples/jsm': 'three/examples/jsm'
+    }
+  },
+  optimizeDeps: {
+    include: ['three', 'dat.gui']
+  },
+  ssr: {
+    noExternal: ['three', 'dat.gui', '@splinetool/viewer', '@splinetool/loader'] // Exclude Three.js from SSR to avoid issues
+  }
 });
